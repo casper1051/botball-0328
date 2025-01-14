@@ -1,7 +1,10 @@
+/*
+Solaris Link Control
+by Rocky R.
+*/
 #include <kipr/wombat.h>
-#ifndef ROBOT_CONTROLLER_H
-#define ROBOT_CONTROLLER_H
-
+#ifndef solaris
+#define solaris
 #include <string>
 
 // Parameters
@@ -126,11 +129,14 @@ inline void debug_gyro() {
 
     // Continuously print current gyro z value until user stops
     while (!side_button()) {}
-        short int current_GZ = gyro_z();
-        printf("Current gyro z-axis value: %d\n", current_GZ);
-
-        // Optional: You can add a delay to avoid spamming the console too quickly
-        msleep(500); // Sleep for 500 ms (adjust as needed)
-    //}
+    short int current_GZ = gyro_z();
+    printf("Current gyro z-axis value: %d\n", current_GZ);
+    msleep(500); // Sleep for 500 ms (adjust as needed)
 }
-#endif // ROBOT_CONTROLLER_H
+#endif // Solaris
+
+/*
+	Solaris is a library, utility, and operating system packed into one img file. It can be used for various things. 
+    This code is link_control_2.h of Solaris 1.2.1
+	Older versions of Solaris are no longer supported
+*/
