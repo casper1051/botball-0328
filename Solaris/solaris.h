@@ -42,7 +42,7 @@ inline void os_system(const std::string& command) {
     // Execute the system command
     int ret_code = system(command.c_str());
     if (ret_code != 0) {
-        printf("An error has occurred on os_system");
+        printf("An error has occurred on os_system: %d", ret_code);
     }
 }
 
